@@ -3,7 +3,7 @@ using namespace std;
 
 class Ride
 {
-public:
+private:
     string RideName;
     float total_Ride_Time;
     bool isRideStart;
@@ -12,14 +12,6 @@ public:
     int Counter;
     static int price;
 public:
-    // Ride(string RideName,float total_Ride_Time,bool isRideStart,bool isRideStop,bool EmergencyStop){
-    //     this->RideName = RideName;
-    //     this->total_Ride_Time = total_Ride_Time;
-    //     this->isRideStart = isRideStart;
-    //     this->isRideStop = isRideStop;
-    //     this->EmergencyStop = EmergencyStop;
-    //     this->Counter = Counter;
-    // }
     void setRideName(string RideName){
         this->RideName = RideName;
         }
@@ -61,16 +53,20 @@ public:
     static void setPrice(int p){
         price = p;
     }
+    void getPrice(){
+        cout<<"The Price of Ride is : "<<price<<endl;
+    }
 };
 int Ride :: price = 0;
 int main(){
     Ride :: setPrice(150);
     Ride R1;
-    R1.RideName("Roller Coaster");
+    R1.setRideName("Roller Coaster");
     R1.settotalRideTime(55.5);
-    R1.isRideStart("yes");
-    R1.isRidestop("No");
+    R1.isridestart();
+    R1.isridestop("No");
     R1.isEmergencyStop("No");
     R1.setCounter(5);
-    R1.getRideName;
+    R1.getRideName();
+    R1.getPrice();
 }
